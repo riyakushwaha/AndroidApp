@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/titleFragment2">
+
+    <fragment
+        android:id="@+id/titleFragment2"
+        android:name="com.example.thecanteen.TitleFragment"
+        android:label="The Canteen"
+        tools:layout="@layout/fragment_title"
+        >
+        <action
+            android:id="@+id/action_titleFragment2_to_menuFragment"
+            app:destination="@id/menuFragment" />
+        <action
+            android:id="@+id/action_titleFragment2_to_menuFragment2"
+            app:destination="@id/menuFragment" />
+        <action
+            android:id="@+id/action_titleFragment2_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
+        <action
+            android:id="@+id/action_titleFragment2_to_ordersFragment"
+            app:destination="@id/ordersFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.example.thecanteen.MenuFragment"
+        android:label="Categories"
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/action_menuFragment_to_customizedMenuFragment"
+            app:destination="@id/customizedMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/customizedMenuFragment"
+        android:name="com.example.thecanteen.CustomizedMenuFragment"
+        android:label="Menu"
+        tools:layout="@layout/fragment_customized_menu" >
+        <action
+            android:id="@+id/action_customizedMenuFragment_to_cartFragment"
+            app:destination="@id/cartFragment" />
+        <argument
+            android:name="foodtype"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.example.thecanteen.CartFragment"
+        android:label="Your Cart"
+        tools:layout="@layout/fragment_cart" >
+        <action
+            android:id="@+id/action_cartFragment_to_endFragment"
+            app:destination="@id/endFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/endFragment"
+        android:name="com.example.thecanteen.EndFragment"
+        android:label="The Canteen"
+        tools:layout="@layout/fragment_end" >
+        <action
+            android:id="@+id/action_endFragment_to_titleFragment2"
+            app:destination="@id/titleFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.example.thecanteen.AboutFragment"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/ordersFragment"
+        android:name="com.example.thecanteen.OrdersFragment"
+        android:label="fragment_orders"
+        tools:layout="@layout/fragment_orders" />
+</navigation>

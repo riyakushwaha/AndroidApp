@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">The Canteen</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="welcome_text">You are just one click away from appetizing dishes</string>
+    <string name="start">Start Now</string>
+    <string name="the_canteen">The Canteen</string>
+    <string name="junkfood">Junk Food</string>
+    <string name="view_cart">View Cart</string>
+    <string name="place_order">Place Order</string>
+    <string name="placed_order">Congratulations!! \nYour Order Has Been Placed Successfully.</string>
+    <string name="back">Back</string>
+    <string name="about">About</string>
+    <string name="my_orders">Orders</string>
+    <string name="add">Add</string>
+</resources>
