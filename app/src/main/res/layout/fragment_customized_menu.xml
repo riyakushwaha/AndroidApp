@@ -15,22 +15,23 @@
             android:id="@+id/food_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toTopOf="@+id/viewcartButton"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.4"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.034"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/viewcartButton"
+            style="@style/buttonStyle"
             android:layout_width="match_parent"
             android:text="@string/view_cart"
+            android:layout_marginTop="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.15"
             app:layout_constraintStart_toStartOf="parent"
-            style="@style/buttonStyle" />
+            app:layout_constraintTop_toBottomOf="@+id/food_list"
+            app:layout_constraintVertical_bias="0.984" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

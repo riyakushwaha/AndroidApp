@@ -48,11 +48,17 @@
     <fragment
         android:id="@+id/cartFragment"
         android:name="com.example.thecanteen.CartFragment"
-        android:label="Your Cart"
+        android:label="Cart"
         tools:layout="@layout/fragment_cart" >
         <action
             android:id="@+id/action_cartFragment_to_endFragment"
             app:destination="@id/endFragment" />
+        <argument
+            android:name="wantedFood"
+            app:argType="string" />
+        <argument
+            android:name="foodPrice"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/endFragment"
@@ -66,11 +72,11 @@
     <fragment
         android:id="@+id/aboutFragment"
         android:name="com.example.thecanteen.AboutFragment"
-        android:label="fragment_about"
+        android:label="About"
         tools:layout="@layout/fragment_about" />
     <fragment
         android:id="@+id/ordersFragment"
         android:name="com.example.thecanteen.OrdersFragment"
-        android:label="fragment_orders"
+        android:label="My Orders"
         tools:layout="@layout/fragment_orders" />
 </navigation>

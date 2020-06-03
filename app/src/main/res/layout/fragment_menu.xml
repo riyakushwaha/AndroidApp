@@ -4,34 +4,62 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.thecanteen.MenuFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:id="@+id/menuFragment"
         style="@style/screenStyle"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <ImageButton
+            android:layout_marginTop="30dp"
             android:id="@+id/junkfood_button"
-            android:layout_width="229dp"
-            android:layout_height="162dp"
+            android:layout_width="230dp"
+            android:layout_height="169dp"
+            android:layout_gravity="center"
+            android:contentDescription="@string/fast_food"
             android:src="@drawable/junkfood"
-            android:textAlignment="center"
-            android:tooltipText="@string/junkfood"
-            app:layout_constraintBottom_toTopOf="@+id/drinks_button"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
+            />
+
+
+        <TextView
+            android:id="@+id/junkfood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/pinkish"
+            android:fontFamily="@font/poppins_medium"
+            android:padding="10dp"
+            android:paddingStart="80dp"
+            android:paddingEnd="80dp"
+            android:text="@string/fast_food"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
 
         <ImageButton
+            android:layout_marginTop="30dp"
             android:id="@+id/drinks_button"
-            android:layout_width="214dp"
-            android:layout_height="178dp"
-            android:layout_marginBottom="364dp"
+            android:layout_width="226dp"
+            android:layout_height="180dp"
+            android:contentDescription="@string/beverages"
             android:src="@drawable/drinkss"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:id="@+id/beverage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/pinkish"
+            android:fontFamily="@font/poppins_medium"
+            android:padding="10dp"
+            android:paddingStart="80dp"
+            android:paddingEnd="80dp"
+            android:text="@string/beverages"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:layout_gravity="center"
+            />
+
+
+    </LinearLayout>
 </layout>

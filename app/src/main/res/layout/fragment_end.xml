@@ -9,41 +9,58 @@
     android:layout_height="match_parent"
     style="@style/screenStyle">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="383dp"
-        android:layout_height="406dp"
-        android:contentDescription="People with food"
-        android:src="@drawable/endpageimage"
-        app:layout_constraintBottom_toTopOf="@+id/backbutton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="326dp"
+            android:layout_height="312dp"
+            android:contentDescription="People with food"
+            android:src="@drawable/happyend"
+            app:layout_constraintBottom_toTopOf="@+id/backbutton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.733" />
 
-    <TextView
-        android:id="@+id/endNoteTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:fontFamily="@font/poppins_medium"
-        android:text="@string/placed_order"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/congoTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/congratulations"
+            android:textAlignment="center"
+            android:textColor="@color/pinkish"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toTopOf="@+id/imageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.622" />
 
-    <Button
-        android:id="@+id/backbutton"
-        style="@style/buttonStyle"
-        android:layout_width="match_parent"
-        android:layout_marginBottom="132dp"
-        android:text="@string/back"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="20dp" />
+        <TextView
+            android:id="@+id/orderplacedView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/placed_order"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/congoTextView"
+            app:layout_constraintVertical_bias="0.428"
+            tools:layout_editor_absoluteX="32dp" />
+
+        <Button
+            android:id="@+id/backbutton"
+            style="@style/buttonStyle"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="104dp"
+            android:text="@string/back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:layout_editor_absoluteX="20dp" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -8,9 +8,20 @@
     <string name="junkfood">Junk Food</string>
     <string name="view_cart">View Cart</string>
     <string name="place_order">Place Order</string>
-    <string name="placed_order">Congratulations!! \nYour Order Has Been Placed Successfully.</string>
+    <string name="congratulations">Congratulations!!</string>
+    <string name="placed_order">Your Order Has Been Placed Successfully.</string>
     <string name="back">Back</string>
     <string name="about">About</string>
     <string name="my_orders">Orders</string>
     <string name="add">Add</string>
+    <string name="food_item">Food Item</string>
+    <string name="price">Price</string>
+    <string name="total">Total</string>
+    <string name="fast_food">Fast Food</string>
+    <string name="beverages">Beverage</string>
+    <string name="about_para">\nThis is a food ordering app. This app can be used by canteens of different institutions and offices to order their lunch by doing their work. It will save their time and
+        people can also keep a check on their eating habits. \nIn this hypothetical canteen, named <b>The Canteen</b> there are two there are two categories available. Clicking on the image will get you to the page of your
+    choice menu. For now, you will able to select only one item. Then in the cart, you will see your final amount to be paid. \n\nIn this application has been made by using
+        <b><i>Recycler View, Data Binding, Fragments, Navigation, View Model</i></b> concepts.</string>
+
 </resources>

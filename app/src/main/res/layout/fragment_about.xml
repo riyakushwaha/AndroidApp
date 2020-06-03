@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".AboutFragment">
 
@@ -7,11 +8,28 @@
         style="@style/screenStyle"
         android:id="@+id/ordersFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    <TextView
-        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="ABOUT FRAGMENT" />
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/canteenImage"
+            android:layout_width="411dp"
+            android:layout_height="279dp"
+            android:layout_gravity="center"
+            android:contentDescription="people in canteen"
+            android:src="@drawable/canteen" />
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/about_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:textSize="15sp"
+            android:textAlignment="inherit"
+            android:text="@string/about_para" />
+</ScrollView>
     </LinearLayout>
 </layout>

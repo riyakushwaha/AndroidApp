@@ -4,31 +4,101 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".CartFragment">
 
-<androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cartFragment"
+        style="@style/screenStyle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/placeorder_button"
+            style="@style/buttonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="336dp"
+            android:text="@string/place_order"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
+<TableLayout
     android:layout_width="match_parent"
-    android:id="@+id/cartFragment"
-    style="@style/screenStyle"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
+<TableRow android:background="@color/grey">
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment"
-        tools:layout_editor_absoluteX="20dp"
-        tools:layout_editor_absoluteY="20dp" />
-
-    <Button
-        android:id="@+id/placeorder_button"
-        style="@style/buttonStyle"
-        android:layout_width="match_parent"
+        android:id="@+id/nameHeaderbox"
+        style="@style/headers"
+        android:layout_width="57dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="336dp"
-        android:text="@string/place_order"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_weight="1"
+        android:text="@string/food_item" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/priceHeaderbox"
+        style="@style/headers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/price"
+        android:layout_weight="1"/>
+
+
+</TableRow>
+    <TableRow>
+
+        <TextView
+            android:id="@+id/item1namebox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            tools:text="First Item"
+            android:paddingBottom="6dp"
+            android:paddingStart="40dp"
+            android:paddingTop="6dp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/item1pricebox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            tools:text="Rs. 100"
+            android:paddingBottom="6dp"
+            android:paddingStart="40dp"
+            android:paddingTop="6dp"
+            android:layout_weight="1"/>
+
+    </TableRow>
+
+    <TableRow>
+        <TextView></TextView>
+    </TableRow>
+    <TableRow android:background="@color/grey">
+        <TextView
+            android:id="@+id/totalheader"
+            style="@style/headers"
+            android:layout_width="57dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/total"
+            />
+
+        <TextView
+            android:id="@+id/totalprice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            tools:text="Rs. 1000"
+            android:paddingBottom="6dp"
+            android:paddingStart="40dp"
+            android:paddingTop="6dp"
+            android:layout_weight="1"
+
+            />
+
+
+    </TableRow>
+</TableLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
