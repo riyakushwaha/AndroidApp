@@ -20,7 +20,7 @@
             app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.733" />
+            app:layout_constraintVertical_bias="1.0" />
 
         <TextView
             android:id="@+id/congoTextView"
@@ -34,9 +34,10 @@
             android:textSize="30sp"
             app:layout_constraintBottom_toTopOf="@+id/imageView"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.622" />
+            app:layout_constraintVertical_bias="0.362" />
 
         <TextView
             android:id="@+id/orderplacedView"
@@ -48,9 +49,10 @@
             android:textColor="@color/black"
             android:textSize="15sp"
             app:layout_constraintBottom_toTopOf="@+id/imageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/congoTextView"
-            app:layout_constraintVertical_bias="0.428"
-            tools:layout_editor_absoluteX="32dp" />
+            app:layout_constraintVertical_bias="0.0" />
 
         <Button
             android:id="@+id/backbutton"
@@ -60,7 +62,6 @@
             android:text="@string/back"
             app:layout_constraintBottom_toBottomOf="parent"
             tools:layout_editor_absoluteX="20dp" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

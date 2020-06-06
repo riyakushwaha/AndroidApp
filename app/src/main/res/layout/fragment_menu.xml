@@ -7,20 +7,20 @@
     <LinearLayout
         android:id="@+id/menuFragment"
         style="@style/screenStyle"
+        android:padding="30dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <ImageButton
-            android:layout_marginTop="30dp"
-            android:id="@+id/junkfood_button"
-            android:layout_width="230dp"
-            android:layout_height="169dp"
-            android:layout_gravity="center"
-            android:contentDescription="@string/fast_food"
-            android:src="@drawable/junkfood"
-            />
 
+        <ImageButton
+            android:id="@+id/junkfood_button"
+            android:layout_width="215dp"
+            android:layout_height="180dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:contentDescription="@string/fast_food"
+            android:src="@drawable/junkfood" />
 
         <TextView
             android:id="@+id/junkfood"
@@ -37,13 +37,13 @@
             android:textSize="15sp" />
 
         <ImageButton
-            android:layout_marginTop="30dp"
             android:id="@+id/drinks_button"
-            android:layout_width="226dp"
+            android:layout_width="231dp"
             android:layout_height="180dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
             android:contentDescription="@string/beverages"
-            android:src="@drawable/drinkss"
-            android:layout_gravity="center"/>
+            android:src="@drawable/drinkss" />
 
         <TextView
             android:id="@+id/beverage"

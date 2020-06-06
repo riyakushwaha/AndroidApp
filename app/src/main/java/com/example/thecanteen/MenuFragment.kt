@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
 import com.example.thecanteen.databinding.FragmentMenuBinding
 
 class MenuFragment : Fragment() {
@@ -24,8 +25,9 @@ class MenuFragment : Fragment() {
 
         binding.drinksButton.setOnClickListener{view: View ->
         view.findNavController().navigate(MenuFragmentDirections.actionMenuFragmentToCustomizedMenuFragment("beverage"))}
+
+
         return binding.root
     }
-
 
 }

@@ -1,18 +1,83 @@
 package com.example.thecanteen
 
+
+import android.app.Application
 import android.util.Log
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.AndroidViewModel
+import com.example.thecanteen.database.OrderedItem
+import com.example.thecanteen.database.OrderedItemDatabaseDao
+import kotlinx.coroutines.*
 
-class CustomizedMenuViewModel: ViewModel() {
 
+class CustomizedMenuViewModel(foodtype: String, dataSource: OrderedItemDatabaseDao,
+                        application: Application): AndroidViewModel(application) {
+
+    var foodType = foodtype
+    val database = dataSource
+    private var viewModelJob = Job()
+    private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
+
+     fun addItem(newOrder: OrderedItem){
+        uiScope.launch {
+            insert(newOrder)
+        }
+    }
+
+    private suspend fun insert(order: OrderedItem){
+        withContext(Dispatchers.IO){
+            database.insert(order)
+            Log.i("Database", "ItemAdded")
+        }
+    }
+
+    fun onClear(){
+        uiScope.launch {
+            clear()
+        }
+    }
+
+    private suspend fun clear(){
+        withContext(Dispatchers.IO){
+            database.clear()
+            Log.i("Database", "All values deleted")
+        }
+    }
+//    fun findItem(key: String): Boolean{
+//        var entryfound :Boolean = false
+//        uiScope.launch{
+//            entryfound = findItemInDataBase(key)
+//        }
+//        return entryfound
+//    }
+//
+//    private suspend fun findItemInDataBase(key: String): Boolean{
+//        var entry:Boolean = false
+//        withContext(Dispatchers.IO){
+//            entry  = database.findItem(key)
+//            Log.i("Database", "Finding Item in Database")
+//        }
+//        return entry
+//    }
+//
+//    fun deleteItem(key: String){
+//        uiScope.launch {
+//           delete(key)
+//        }
+//    }
+//
+//    private suspend fun delete(key: String){
+//        withContext(Dispatchers.IO){
+//            database.deleteItem(key)
+//            Log.i("Database", "ItemDeleted")
+//        }
+//    }
+
+    ///////////////////////////////////////////////////////////////////////
     var wantedItem: String =""
     var wantedItemPrice: String =""
-    var navigateNow =  MutableLiveData<Boolean>()
 
     init {
         Log.i("CustomizedMenuViewModel", "CustomizedMenuViewModel created!")
-navigateNow.value = false
     }
 
     data class FoodMenu(
@@ -21,7 +86,7 @@ navigateNow.value = false
         val price: String
     )
 
-     val fastfood: List<FoodMenu> = listOf(
+    val fastfood: List<FoodMenu> = listOf(
         FoodMenu(text = "Burger",
             imageResource = R.drawable.burger,
             price = "80"),
@@ -46,16 +111,16 @@ navigateNow.value = false
         FoodMenu(text = "Macroni",
             imageResource = R.drawable.macroni,
             price = "70"),
-         FoodMenu(text = "Spring Roll",
-             imageResource = R.drawable.springroll,
-             price = "300"),
-         FoodMenu(text = "Momos",
-             imageResource = R.drawable.momos,
-             price = "80")
+        FoodMenu(text = "Spring Roll",
+            imageResource = R.drawable.springroll,
+            price = "300"),
+        FoodMenu(text = "Momos",
+            imageResource = R.drawable.momos,
+            price = "80")
 
     )
 
-     val beverage: List<FoodMenu> = listOf(
+    val beverage: List<FoodMenu> = listOf(
         FoodMenu(text = "Tea",
             imageResource = R.drawable.tea,
             price = "20"),
@@ -68,8 +133,12 @@ navigateNow.value = false
     )
 
 
+
     override fun onCleared() {
         super.onCleared()
-        Log.i("CustomizedMenuViewModel", "CustomizedMenuViewModel destroyed!")
+        viewModelJob.cancel()
+        Log.i("database", "job cancelled!")
     }
+
+
 }
