@@ -1,15 +1,12 @@
 package com.example.thecanteen.database
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.Query
-import androidx.room.Update
+import androidx.room.*
 import com.example.thecanteen.CustomizedMenuViewModel
 
 @Dao
 interface OrderedItemDatabaseDao{
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun insert(orderedItem: OrderedItem)
 
     @Query("DELETE from ordered_item_table WHERE name_of_tem = :key")

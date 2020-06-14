@@ -31,7 +31,8 @@
         tools:layout="@layout/fragment_menu" >
         <action
             android:id="@+id/action_menuFragment_to_customizedMenuFragment"
-            app:destination="@id/customizedMenuFragment" />
+            app:destination="@id/customizedMenuFragment"
+            app:popUpTo="@id/menuFragment" />
     </fragment>
     <fragment
         android:id="@+id/customizedMenuFragment"
@@ -40,7 +41,8 @@
         tools:layout="@layout/fragment_customized_menu" >
         <action
             android:id="@+id/action_customizedMenuFragment_to_cartFragment"
-            app:destination="@id/cartFragment" />
+            app:destination="@id/cartFragment"
+            app:popUpTo="@id/customizedMenuFragment" />
         <argument
             android:name="foodtype"
             app:argType="string" />
